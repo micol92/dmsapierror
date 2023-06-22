@@ -1,0 +1,36 @@
+<core:FragmentDefinition 
+    xmlns="sap.m" 
+    xmlns:f="sap.ui.layout.form" 
+    xmlns:ui="sap.ui.table" 
+    xmlns:core="sap.ui.core">
+    <Dialog id="gateDialog" title="Select Gate" contentHeight="450px" contentWidth="500px">
+        <content>
+            <Toolbar>
+                <OverflowToolbar>
+                    <SearchField id="gateSearch" placeholder="Search gate" search=".ongateSearch" width="300px" class="sapUiSmallMarginBeginEnd" />
+                    <ToolbarSpacer />
+                </OverflowToolbar>
+            </Toolbar>
+
+            <Table id="gateTable" items="{path:'gateModel>/'}"   mode="SingleSelectLeft">
+                <columns>
+                    <Column width="100%">
+                        <Text text="gate" />
+                    </Column>
+                </columns>
+                <ColumnListItem>
+                    <cells>
+                        <Text text="{gateModel>gate}" />
+                    </cells>
+                </ColumnListItem>
+            </Table>
+        </content>
+
+        <beginButton>
+            <Button text="Confirm" type="Emphasized" press="ongateSave" />
+        </beginButton>
+        <endButton>
+            <Button text="Cancel" type="Transparent" press="ongateCancel" />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

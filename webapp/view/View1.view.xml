@@ -1,0 +1,74 @@
+<mvc:View controllerName="project1x1.controller.View1" xmlns:u="sap.ui.unified" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Page id="page" title="{i18n>title}">
+		<customHeader>
+			<Bar id="bar1">
+				<contentLeft>
+					<Image id="image1" src="https://unpkg.com/fundamental-styles@0.10.0/dist/images/sap-logo.png" />
+					<Label id="label1" text="BTP CMIS Search" />
+				</contentLeft>
+			</Bar>
+		</customHeader>
+		<content>
+			<Table id="table1" inset="true" items="{/results}" busy="{viewModel>/isBusy}">
+				<columns>
+					<Column id="headcolumn1">
+						<header>
+							<Label id="tablelabel" text="FileName">
+							</Label>
+						</header>
+					</Column>
+					<Column id="headcolumn7">
+						<header>
+							<Label id="tablelabe7" text="objectId">
+							</Label>
+						</header>
+					</Column>
+					<Column id="headcolumn2">
+						<header>
+							<Label id="tablelabel2" text="createdBy">
+							</Label>
+						</header>
+					</Column>
+					<Column id="headcolumn3">
+						<header>
+							<Label id="tablelabel3" text="ObjectTypeId">
+							</Label>
+						</header>
+					</Column>
+					<Column id="headcolumn4">
+						<header>
+							<Label id="tablelabel4" text="Actions">
+							</Label>
+						</header>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="items">
+						<cells>
+							<Text id="text1" text="{succinctProperties/cmis:name}" />
+							<Text id="text4" text="{succinctProperties/cmis:objectId}" />
+							<Text id="text2" text="{succinctProperties/cmis:createdBy}" />
+							<Text id="text3" text="{succinctProperties/cmis:objectTypeId}" />
+							<HBox id="actionhbox">
+								<Button id="buttondelte" icon="sap-icon://delete" press="pressDelete" />
+							</HBox>
+						</cells>
+					</ColumnListItem>
+				</items>
+				<headerToolbar>
+					<Toolbar id="toolbar1">
+						<content>
+							<Title id="toolbartitle" text="Ducuments" width="25%" />
+							<ToolbarSpacer id="toolspace">
+							</ToolbarSpacer>
+							<Label id="filenamelabel" width="5%" text="FileName" />
+							<Input id="filename" width="40%" />
+							<Button id="button1" icon="sap-icon://search" width="15%" text="Search" press="pressQuery" />
+							<Button id="button2" icon="sap-icon://add" width="15%" text="UploadFile" press="pressCreate" />
+						</content>
+					</Toolbar>
+				</headerToolbar>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

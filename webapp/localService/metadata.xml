@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZGWPOC01_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <EntityType Name="ZET001" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ZFMMP_LP_DELIVERY_SCHEDULE"/>
+                </Key>
+                <Property Name="ZFMMP_LP_DELIVERY_SCHEDULE" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="ZET001_TO_I" Relationship="ZGWPOC01_SRV.ZET001_TO_I" FromRole="FromRole_ZET001_TO_I" ToRole="ToRole_ZET001_TO_I"/>
+                <NavigationProperty Name="ZET001_TO_E" Relationship="ZGWPOC01_SRV.ZET001_TO_E" FromRole="FromRole_ZET001_TO_E" ToRole="ToRole_ZET001_TO_E"/>
+                <NavigationProperty Name="ZET001_TO_T01" Relationship="ZGWPOC01_SRV.ZET001_TO_T01" FromRole="FromRole_ZET001_TO_T01" ToRole="ToRole_ZET001_TO_T01"/>
+            </EntityType>
+            <EntityType Name="ZET001_I" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="KEY_PROP"/>
+                </Key>
+                <Property Name="KEY_PROP" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="I_DISPD" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="I_WERKS" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="I_LIFNR" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="I_MATNR" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZET001_E" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="KEY_PROP"/>
+                </Key>
+                <Property Name="KEY_PROP" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="E_STATUS" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="E_MESSAGE" Type="Edm.String" MaxLength="220" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZET001_T01" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="KEY_PROP"/>
+                </Key>
+                <Property Name="KEY_PROP" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MATNR" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MAKTX" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZDEINDT" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZDUZEIT" Type="Edm.Time" Precision="0" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZDSMENGE" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:unit="MEINS_GW" sap:label="Scheduled Qty" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZDLMENGE" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:unit="MEINS_GW" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LABST" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:unit="MEINS_GW" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EISBE" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:unit="MEINS_GW" sap:label="Safety Stock" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZDLPERCS" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZCGRTY" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EBELN" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EBELP" Type="Edm.String" MaxLength="5" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MEINS_GW" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Base Unit" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+            </EntityType>
+            <EntityType Name="ZET002" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ZFMMP_OPEN_JIT_CALL_ORDER"/>
+                </Key>
+                <Property Name="ZFMMP_OPEN_JIT_CALL_ORDER" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="ZET002_TO_I" Relationship="ZGWPOC01_SRV.ZET002_TO_I" FromRole="FromRole_ZET002_TO_I" ToRole="ToRole_ZET002_TO_I"/>
+                <NavigationProperty Name="ZET002_TO_E" Relationship="ZGWPOC01_SRV.ZET002_TO_E" FromRole="FromRole_ZET002_TO_E" ToRole="ToRole_ZET002_TO_E"/>
+                <NavigationProperty Name="ZET002_TO_T01" Relationship="ZGWPOC01_SRV.ZET002_TO_T01" FromRole="FromRole_ZET002_TO_T01" ToRole="ToRole_ZET002_TO_T01"/>
+            </EntityType>
+            <EntityType Name="ZET002_I" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="KEY_PROP"/>
+                </Key>
+                <Property Name="KEY_PROP" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="I_LIFNR" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="I_WERKS" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="I_MATNR" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZET002_E" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="KEY_PROP"/>
+                </Key>
+                <Property Name="KEY_PROP" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="E_STATUS" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="E_MESSAGE" Type="Edm.String" MaxLength="220" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZET002_T01" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="KEY_PROP"/>
+                </Key>
+                <Property Name="KEY_PROP" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZJCNO" Type="Edm.String" MaxLength="15" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MATNR" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MAKTX" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MENGE" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:unit="MEINS_GW" sap:label="Quantity" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZDLPERCS" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZDLBOX" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:unit="MEINS_GW" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZJCDAT" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZJCZET" Type="Edm.Time" Precision="0" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EISBE" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:unit="MEINS_GW" sap:label="Safety Stock" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LABST" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:unit="MEINS_GW" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MEINS_GW" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Base Unit" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+            </EntityType>
+            <EntityType Name="ZET003" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ZFMMP_MAINTAIN_LP_ASN"/>
+                </Key>
+                <Property Name="ZFMMP_MAINTAIN_LP_ASN" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="ZET003_TO_T03" Relationship="ZGWPOC01_SRV.ZET003_TO_T03" FromRole="FromRole_ZET003_TO_T03" ToRole="ToRole_ZET003_TO_T03"/>
+                <NavigationProperty Name="ZET003_TO_T02" Relationship="ZGWPOC01_SRV.ZET003_TO_T02" FromRole="FromRole_ZET003_TO_T02" ToRole="ToRole_ZET003_TO_T02"/>
+                <NavigationProperty Name="ZET003_TO_T01" Relationship="ZGWPOC01_SRV.ZET003_TO_T01" FromRole="FromRole_ZET003_TO_T01" ToRole="ToRole_ZET003_TO_T01"/>
+                <NavigationProperty Name="ZET003_TO_E" Relationship="ZGWPOC01_SRV.ZET003_TO_E" FromRole="FromRole_ZET003_TO_E" ToRole="ToRole_ZET003_TO_E"/>
+            </EntityType>
+            <EntityType Name="ZET003_E" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="KEY_PROP"/>
+                </Key>
+                <Property Name="KEY_PROP" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="E_ZASNNO" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="E_STATUS" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="E_MESSAGE" Type="Edm.String" MaxLength="220" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZET003_T01" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="KEY_PROP"/>
+                </Key>
+                <Property Name="KEY_PROP" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LIFNR" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZASNTY" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="WERKS" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Plant" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZDIVNO" Type="Edm.String" MaxLength="15" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZDIVDAT" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZDLGATE" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZDEPDAT" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZDEPTIM" Type="Edm.Time" Precision="0" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZEARDAT" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZEARTIM" Type="Edm.Time" Precision="0" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZCARNO" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZDLRNAME" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZDLRMOBL" Type="Edm.String" MaxLength="15" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZDLTLOC" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZET003_T02" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="KEY_PROP"/>
+                </Key>
+                <Property Name="KEY_PROP" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EBELN" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EBELP" Type="Edm.String" MaxLength="5" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MATNR" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZDLMENGE" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:unit="MEINS_GW" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZDLPERCS" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZDLBOX" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:unit="MEINS_GW" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LOEKZ" Type="Edm.Boolean" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZJCNO" Type="Edm.String" MaxLength="15" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MEINS_GW" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Base Unit" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+            </EntityType>
+            <EntityType Name="ZET003_T03" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="KEY_PROP"/>
+                </Key>
+                <Property Name="KEY_PROP" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZCEXIDV" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="ZET001_TO_E" sap:content-version="1">
+                <End Type="ZGWPOC01_SRV.ZET001" Multiplicity="1" Role="FromRole_ZET001_TO_E"/>
+                <End Type="ZGWPOC01_SRV.ZET001_E" Multiplicity="1" Role="ToRole_ZET001_TO_E"/>
+            </Association>
+            <Association Name="ZET001_TO_T01" sap:content-version="1">
+                <End Type="ZGWPOC01_SRV.ZET001" Multiplicity="1" Role="FromRole_ZET001_TO_T01"/>
+                <End Type="ZGWPOC01_SRV.ZET001_T01" Multiplicity="*" Role="ToRole_ZET001_TO_T01"/>
+            </Association>
+            <Association Name="ZET001_TO_I" sap:content-version="1">
+                <End Type="ZGWPOC01_SRV.ZET001" Multiplicity="1" Role="FromRole_ZET001_TO_I"/>
+                <End Type="ZGWPOC01_SRV.ZET001_I" Multiplicity="1" Role="ToRole_ZET001_TO_I"/>
+            </Association>
+            <Association Name="ZET002_TO_I" sap:content-version="1">
+                <End Type="ZGWPOC01_SRV.ZET002" Multiplicity="1" Role="FromRole_ZET002_TO_I"/>
+                <End Type="ZGWPOC01_SRV.ZET002_I" Multiplicity="1" Role="ToRole_ZET002_TO_I"/>
+            </Association>
+            <Association Name="ZET002_TO_E" sap:content-version="1">
+                <End Type="ZGWPOC01_SRV.ZET002" Multiplicity="1" Role="FromRole_ZET002_TO_E"/>
+                <End Type="ZGWPOC01_SRV.ZET002_E" Multiplicity="1" Role="ToRole_ZET002_TO_E"/>
+            </Association>
+            <Association Name="ZET002_TO_T01" sap:content-version="1">
+                <End Type="ZGWPOC01_SRV.ZET002" Multiplicity="1" Role="FromRole_ZET002_TO_T01"/>
+                <End Type="ZGWPOC01_SRV.ZET002_T01" Multiplicity="*" Role="ToRole_ZET002_TO_T01"/>
+            </Association>
+            <Association Name="ZET003_TO_E" sap:content-version="1">
+                <End Type="ZGWPOC01_SRV.ZET003" Multiplicity="1" Role="FromRole_ZET003_TO_E"/>
+                <End Type="ZGWPOC01_SRV.ZET003_E" Multiplicity="1" Role="ToRole_ZET003_TO_E"/>
+            </Association>
+            <Association Name="ZET003_TO_T01" sap:content-version="1">
+                <End Type="ZGWPOC01_SRV.ZET003" Multiplicity="1" Role="FromRole_ZET003_TO_T01"/>
+                <End Type="ZGWPOC01_SRV.ZET003_T01" Multiplicity="*" Role="ToRole_ZET003_TO_T01"/>
+            </Association>
+            <Association Name="ZET003_TO_T02" sap:content-version="1">
+                <End Type="ZGWPOC01_SRV.ZET003" Multiplicity="1" Role="FromRole_ZET003_TO_T02"/>
+                <End Type="ZGWPOC01_SRV.ZET003_T02" Multiplicity="*" Role="ToRole_ZET003_TO_T02"/>
+            </Association>
+            <Association Name="ZET003_TO_T03" sap:content-version="1">
+                <End Type="ZGWPOC01_SRV.ZET003" Multiplicity="1" Role="FromRole_ZET003_TO_T03"/>
+                <End Type="ZGWPOC01_SRV.ZET003_T03" Multiplicity="*" Role="ToRole_ZET003_TO_T03"/>
+            </Association>
+            <EntityContainer Name="ZGWPOC01_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ZET001_Set" EntityType="ZGWPOC01_SRV.ZET001" sap:content-version="1"/>
+                <EntitySet Name="ZET001_I_Set" EntityType="ZGWPOC01_SRV.ZET001_I" sap:content-version="1"/>
+                <EntitySet Name="ZET001_E_Set" EntityType="ZGWPOC01_SRV.ZET001_E" sap:content-version="1"/>
+                <EntitySet Name="ZET001_T01_Set" EntityType="ZGWPOC01_SRV.ZET001_T01" sap:content-version="1"/>
+                <EntitySet Name="ZET002_Set" EntityType="ZGWPOC01_SRV.ZET002" sap:content-version="1"/>
+                <EntitySet Name="ZET002_I_Set" EntityType="ZGWPOC01_SRV.ZET002_I" sap:content-version="1"/>
+                <EntitySet Name="ZET002_E_Set" EntityType="ZGWPOC01_SRV.ZET002_E" sap:content-version="1"/>
+                <EntitySet Name="ZET002_T01_Set" EntityType="ZGWPOC01_SRV.ZET002_T01" sap:content-version="1"/>
+                <EntitySet Name="ZET003_Set" EntityType="ZGWPOC01_SRV.ZET003" sap:content-version="1"/>
+                <EntitySet Name="ZET003_E_Set" EntityType="ZGWPOC01_SRV.ZET003_E" sap:content-version="1"/>
+                <EntitySet Name="ZET003_T01_Set" EntityType="ZGWPOC01_SRV.ZET003_T01" sap:content-version="1"/>
+                <EntitySet Name="ZET003_T02_Set" EntityType="ZGWPOC01_SRV.ZET003_T02" sap:content-version="1"/>
+                <EntitySet Name="ZET003_T03_Set" EntityType="ZGWPOC01_SRV.ZET003_T03" sap:content-version="1"/>
+                <AssociationSet Name="ZET003_TO_T03_Set" Association="ZGWPOC01_SRV.ZET003_TO_T03" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZET003_Set" Role="FromRole_ZET003_TO_T03"/>
+                    <End EntitySet="ZET003_T03_Set" Role="ToRole_ZET003_TO_T03"/>
+                </AssociationSet>
+                <AssociationSet Name="ZET002_TO_E_Set" Association="ZGWPOC01_SRV.ZET002_TO_E" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZET002_Set" Role="FromRole_ZET002_TO_E"/>
+                    <End EntitySet="ZET002_E_Set" Role="ToRole_ZET002_TO_E"/>
+                </AssociationSet>
+                <AssociationSet Name="ZET001_TO_E_Set" Association="ZGWPOC01_SRV.ZET001_TO_E" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZET001_Set" Role="FromRole_ZET001_TO_E"/>
+                    <End EntitySet="ZET001_E_Set" Role="ToRole_ZET001_TO_E"/>
+                </AssociationSet>
+                <AssociationSet Name="ZET002_TO_T01_Set" Association="ZGWPOC01_SRV.ZET002_TO_T01" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZET002_Set" Role="FromRole_ZET002_TO_T01"/>
+                    <End EntitySet="ZET002_T01_Set" Role="ToRole_ZET002_TO_T01"/>
+                </AssociationSet>
+                <AssociationSet Name="ZET001_TO_I_Set" Association="ZGWPOC01_SRV.ZET001_TO_I" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZET001_Set" Role="FromRole_ZET001_TO_I"/>
+                    <End EntitySet="ZET001_I_Set" Role="ToRole_ZET001_TO_I"/>
+                </AssociationSet>
+                <AssociationSet Name="ZET003_TO_T01_Set" Association="ZGWPOC01_SRV.ZET003_TO_T01" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZET003_Set" Role="FromRole_ZET003_TO_T01"/>
+                    <End EntitySet="ZET003_T01_Set" Role="ToRole_ZET003_TO_T01"/>
+                </AssociationSet>
+                <AssociationSet Name="ZET003_TO_E_Set" Association="ZGWPOC01_SRV.ZET003_TO_E" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZET003_Set" Role="FromRole_ZET003_TO_E"/>
+                    <End EntitySet="ZET003_E_Set" Role="ToRole_ZET003_TO_E"/>
+                </AssociationSet>
+                <AssociationSet Name="ZET003_TO_T02_Set" Association="ZGWPOC01_SRV.ZET003_TO_T02" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZET003_Set" Role="FromRole_ZET003_TO_T02"/>
+                    <End EntitySet="ZET003_T02_Set" Role="ToRole_ZET003_TO_T02"/>
+                </AssociationSet>
+                <AssociationSet Name="ZET002_TO_I_Set" Association="ZGWPOC01_SRV.ZET002_TO_I" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZET002_Set" Role="FromRole_ZET002_TO_I"/>
+                    <End EntitySet="ZET002_I_Set" Role="ToRole_ZET002_TO_I"/>
+                </AssociationSet>
+                <AssociationSet Name="ZET001_TO_T01_Set" Association="ZGWPOC01_SRV.ZET001_TO_T01" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZET001_Set" Role="FromRole_ZET001_TO_T01"/>
+                    <End EntitySet="ZET001_T01_Set" Role="ToRole_ZET001_TO_T01"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link rel="self" href="http://gsb:8000/sap/opu/odata/sap/ZGWPOC01_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://gsb:8000/sap/opu/odata/sap/ZGWPOC01_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

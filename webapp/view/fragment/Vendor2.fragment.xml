@@ -1,0 +1,36 @@
+<core:FragmentDefinition 
+    xmlns="sap.m" 
+    xmlns:f="sap.ui.layout.form" 
+    xmlns:ui="sap.ui.table" 
+    xmlns:core="sap.ui.core">
+    <Dialog id="vendor2Dialog" title="Select Vendor" contentHeight="450px" contentWidth="500px">
+        <content>
+            <Toolbar>
+                <OverflowToolbar>
+                    <SearchField id="vendor2Search" placeholder="Search Vendor" search=".onvendor2Search" width="300px" class="sapUiSmallMarginBeginEnd" />
+                    <ToolbarSpacer />
+                </OverflowToolbar>
+            </Toolbar>
+
+            <Table id="vendor2Table" items="{path:'vendorModel>/'}"   mode="SingleSelectLeft">
+                <columns>
+                    <Column width="100%">
+                        <Text text="Vendor" />
+                    </Column>
+                </columns>
+                <ColumnListItem>
+                    <cells>
+                        <Text text="{vendorModel>vendor}" />
+                    </cells>
+                </ColumnListItem>
+            </Table>
+        </content>
+
+        <beginButton>
+            <Button text="Confirm" type="Emphasized" press="onVendor2Save" />
+        </beginButton>
+        <endButton>
+            <Button text="Cancel" type="Transparent" press="onVendor2Cancel" />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>
