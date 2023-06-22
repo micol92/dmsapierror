@@ -1,0 +1,16 @@
+#clientSecret=<< Existing password/certificate removed on export >>
+#
+#Thu Jun 22 01:39:02 UTC 2023
+Description=document management service integration option destination
+Type=HTTP
+clientId=sb-37afe883-178f-404a-9b7b-5d1d0a645746\!b1111|sdm-di-DocumentManagement-sdm_integration\!b68
+HTML5.Timeout=60000
+HTML5.DynamicDestination=true
+Authentication=OAuth2ClientCredentials
+WebIDEUsage=odata_gen
+Name=dms_inte_op
+WebIDEEnabled=true
+tokenServiceURL=https\://dealerportal.authentication.ap12.hana.ondemand.com/oauth/token
+ProxyType=Internet
+URL=https\://api-sdm-di.cfapps.ap12.hana.ondemand.com/
+tokenServiceURLType=Dedicated
